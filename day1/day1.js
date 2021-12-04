@@ -1,6 +1,5 @@
-const fs = require('fs')
-const readline = require('readline');
-
+const fs = require("fs");
+const readline = require("readline");
 
 const solution1 = async (filename) => {
   return new Promise((res) => {
@@ -14,8 +13,7 @@ const solution1 = async (filename) => {
     let previous;
     let totalIncreases = 0;
 
-    rl.on('line', function(line) {
-
+    rl.on("line", function (line) {
       current = parseInt(line);
 
       if (previous !== undefined) {
@@ -25,16 +23,13 @@ const solution1 = async (filename) => {
       }
 
       previous = current;
-
-    }).on('close', function() {
+    }).on("close", function () {
       res(totalIncreases);
     });
   });
-}
+};
 
-
-
-const solution2 = async(filename) => {
+const solution2 = async (filename) => {
   return new Promise((res) => {
     const stream = fs.createReadStream(filename);
 
@@ -49,7 +44,7 @@ const solution2 = async(filename) => {
     let prev;
     let totalIncreases = 0;
 
-    rl.on('line', function(line) {
+    rl.on("line", function (line) {
       c = b;
       b = a;
       a = parseInt(line);
@@ -59,17 +54,17 @@ const solution2 = async(filename) => {
         if (prev) {
           if (current > prev) totalIncreases++;
         }
-        prev = current
+        prev = current;
       }
-    }).on('close', function() {
+    }).on("close", function () {
       res(totalIncreases);
     });
-  })
-}
+  });
+};
 
 const main = async () => {
-  console.log(await solution1('input.txt'))
-  console.log(await solution2('input.txt'))
+  console.log(await solution1("input.txt"));
+  console.log(await solution2("input.txt"));
 };
 
 main();
