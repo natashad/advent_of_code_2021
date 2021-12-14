@@ -1,5 +1,6 @@
 # Advent Of Code 2021
 
+```
                      _
                     | \
                      '.|
@@ -15,6 +16,8 @@
      `-.__o\o                     o|o       .'-'  \\ ~  ~
           `-.______________________\_...-``'.       ~  ~
                                     `._______`.
+                                    
+```
 
 
 Using a combination of Javascript, typescript and ruby
