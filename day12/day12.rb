@@ -30,7 +30,6 @@ class Day12
       valid_paths.each do |path|
         next_caves = @path_map[path[-1]] || []
         next_caves.each do |cave|
-
           next if yield(cave, path)
 
           if cave == END_KEY
@@ -38,7 +37,6 @@ class Day12
           else
             new_valid_paths.append(path + [cave])
           end
-
         end
       end
       valid_paths = new_valid_paths
